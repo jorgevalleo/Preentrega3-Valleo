@@ -44,7 +44,7 @@ header .menuPrincipal{
 
 /*  MEDIA QUERY MENU  */
 
-@media (max-width:650px){
+@media (max-width:550px){
     .menuPrincipal{
         display: none;
     }
@@ -138,7 +138,7 @@ header .menuPrincipal{
 
 /*  MEDIA QUERY QUIENES SOMOS  */
 
-@media only screen and (max-width: 650px){
+@media only screen and (max-width: 550px){
     .quiensoy{
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -198,7 +198,7 @@ header .menuPrincipal{
 
 /*  MEDIA QUERY SERVICIOS  */
 
-@media only screen and (max-width: 650px){
+@media only screen and (max-width: 550px){
 
     .servicios{
         display: grid;
@@ -288,7 +288,7 @@ header .menuPrincipal{
 
 /*  MEDIA QUERY GALERIA  */
 
-@media only screen and (max-width:650px){
+@media only screen and (max-width:550px){
     .galeria{
         background-color: bisque;
         display: grid;
