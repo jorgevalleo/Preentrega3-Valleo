@@ -1,0 +1,37 @@
+/* mixin con parametros */
+
+/* estructura home */
+@mixin home_uno_dos ($lineas){
+    grid-column: $lineas;
+    text-align: center;
+    margin: 20px 0;
+}
+
+@mixin home_tres_cuatro ($lineas){
+    grid-column: $lineas;
+    text-align: center;
+    margin: 30px 30px;
+}
+
+@mixin home_cinco_seis ($lineas){
+    grid-column: $lineas;
+    margin: 30px 0;
+}
+
+/* estructura de servicios */
+@mixin contenido ($lineas,$align){
+    grid-column: $lineas;
+    text-align: $align;
+}
+
+/* mixin sin parametros */
+
+/* estructura de galeria */
+
+@mixin img_dos_cuatro{
+    grid-column: 2/4;
+}
+
+@mixin img_cuatro_seis{
+    grid-column: 4/6;
+}

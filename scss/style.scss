@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import "utilities/media_query";
+@import "utilities/variables";
+@import "utilities/mixin";
+@import "utilities/extend";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+/*  ESTILOS DE HEADER Y MENU  */
+
+header{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 50px;
+
+    .menuPrincipal{
+        margin: auto 50px;
+
+        li{
+            list-style-type: none ;
+            display: inline;
+            font-weight: 600;
+            padding: 5px;
+
+            a{
+                color: black;
+                text-decoration: none;
+                font-weight: 600;
+            }
+
+            a:hover{
+                color: gray;
+            }
+        }
+    }
+    
+}
+
+.menu-bt{
+    display: none;
+}
+
+/*  MEDIA QUERY MENU  */
+
+@include menu_mobile;
+@include menu_tablet;
+
+/*  FIN ESTILOS HEADER Y MENU  */
+
+/*  ESTILOS DE INDEX  */
+
+.principal{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.item{
+
+    img{
+        inline-size: 100%;
+    }
+}
+
+.uno{
+    @include home_uno_dos (span 6);
+}
+
+.dos{
+    @include home_uno_dos (span 6);
+}
+
+.tres{
+    @include home_tres_cuatro (2 /span 2);
+}
+
+.cuatro{
+    @include home_tres_cuatro (4 /span 2);
+}
+
+.cinco{
+    @include home_cinco_seis (1 /span 3);
+}
+
+.seis{
+    @include home_cinco_seis (4 /span 3);
+}
+
+@include home_tablet;
+@include home_mobile;
+
+/*  FIN ESTILOS DE INDEX  */
+
+/*  ESTILOS DE QUIENES SOMOS  */
+
+.quiensoy{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.encabezado{
+    grid-column: 1/3;
+    text-align: center;
+}
+
+.descripcion{
+    grid-column: 1/2;
+    padding: 30px;
+    text-align: center;
+    margin: 30px;
+}
+
+.img-qs{
+    grid-column: 2/3;
+    margin: 30px;
+
+    img{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+}
+
+/*  MEDIA QUERY QUIENES SOMOS  */
+
+@include quienessomos_tablet;
+@include quienessomos_mobile;
+
+/*  FIN ESTILOS DE QUIENES SOMOS  */
+
+/*  ESTILOS DE SERVICIOS  */
+
+.servicios{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    margin: 30px;
+    column-gap: 30px;
+    row-gap: 30px;
+
+    div{
+        @include contenido (" " , center);
+    }
+    h1{
+        @include contenido (1 /span 5, center);
+    }
+
+    p{
+        @include contenido (2 /span 3, center);
+    };
+
+    img{
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+}
+
+.servicio1{
+    @include contenido (2 /span 1, " ");
+}
+
+.servicio2{
+    @include contenido (3 /span 1, " ");
+}
+
+.servicio3{
+    @include contenido (4 /span 1, " ");
+}
+
+/*  MEDIA QUERY SERVICIOS  */
+
+@include servicios_tablet;
+@include servicios_mobile;
+
+/*  FIN ESTILOS DE SERVICIOS  */
+
+/*  ESTILOS DE GALERIA  */
+
+.galeria{
+    background-color: $color_galeria;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 50px;
+    row-gap: 50px;
+    padding: 20px;
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.titulo{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.img01{
+    @include img_dos_cuatro;
+}
+
+.img02{
+    @include img_cuatro_seis;
+}
+
+.img03{
+    @include img_dos_cuatro;
+}
+
+.img04{
+    @include img_cuatro_seis;
+}
+
+.img05{
+    @include img_dos_cuatro;
+}
+
+.img06{
+    @include img_cuatro_seis;
+}
+
+.img07{
+    @include img_dos_cuatro;
+}
+
+.img08{
+    @include img_cuatro_seis;
+}
+
+/*  MEDIA QUERY GALERIA  */
+
+@include galeria_tablet;
+@include galeria_mobile;
+
+/*  FIN ESTILOS DE GALERIA  */
+
+/*  ESTILOS DE CONTACTO  */
+
+.contacto{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    row-gap: 10px;
+    margin: 30px;
+
+    h1{
+        @include contenido (1 /span 3, center);
+    }
+
+    p{
+        @include contenido (2 /span 1, center);
+    }
+}
+
+.formularioContacto{
+    grid-column: 2/3;
+    background-color: #36ADC4;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    padding: 20px;
+
+    input{
+        border-radius: 5px;
+        font-size: 20px;
+    }
+    .boton_formulario{
+        @extend %boton_formulario;
+    }
+}
+
+
+/*  FIN ESTILOS DE CONTACTO  */
+
+/*  ESTILOS DE FOOTER  */
+
+footer{
+    border: black 1px solid;
+    height: 100px;
+    background-color: $color_footer;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+    div{
+        width: 30%;
+        text-align: center;
+    
+    }
+}
+
+.redes-sociales{
+    display: flex;
+    justify-content: space-between;
+}
+
+/*  FIN ESTILOS DE FOOTER  */
